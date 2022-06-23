@@ -41,6 +41,12 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 #123
-streamlit.dataframe(fruits_to_show)
+
 streamlit.header("The Fruit Load List Contains:")
 streamlit.dataframe(my_data_rows)
+
+# write your own comment -what does the next line do? 
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# write your own comment - what does this do?
+streamlit.dataframe(fruityvice_normalized)
+
